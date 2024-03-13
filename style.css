@@ -1,0 +1,76 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+.containter{
+  display: grid;
+  height: 100vh;
+  color: white;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1.5fr 1.3fr 0.8fr;
+  grid-template-areas: "navbar navbar navbar navbar"
+                      "sidebar main main main"
+                      "sidebar box1 box2 box3"
+                      "sidebar footer footer footer";
+                  grid-gap: 0.2rem;
+                  text-align: center;
+                  font-size: 1.5rem;
+}
+nav{
+  background-color: red;
+  grid-area: navbar;
+}
+nav ul{
+  list-style: none;
+display: flex;
+align-items: center;
+}
+nav ul li{
+  width: 170px;
+  height: 20px;
+  margin: 5px;
+  padding: 20px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+nav ul li a:hover{
+  background: #950101;
+  border-radius: 5px;
+  padding: 15px 45px;
+}
+main{
+  background-color: blue;
+  grid-area: main;
+}
+.sidebar{
+  background-color: green;
+  grid-area: sidebar;
+}
+.box1{
+  background-color: brown;
+  grid-area: box1;
+}
+.box2{
+  background-color: blueviolet;
+  grid-area: box2;
+}
+.box3{
+  background-color: gold;
+  grid-area: box3;
+}
+footer{
+  background-color: aqua;
+  grid-area: footer;
+}
+@media only screen and (max-width:640px){
+  .containter{
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr  2fr  0.2fr 1.2fr
+                          1.2fr 1.2fr 1fr;
+                          grid-template-areas: "navbar" "main" "sidebar" "box1" "box2" "box3" "footer";
+  }
+
+}
